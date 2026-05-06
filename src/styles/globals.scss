@@ -1,0 +1,58 @@
+// Design tokens
+:root {
+  --color-bg: rgba(239, 232, 222, 1);
+  --color-header: #3c2a1e;
+  --color-text: #3c2a1e;
+  --color-text-muted: rgba(60, 42, 30, 0.45);
+  --color-watermark: rgba(60, 42, 30, 0.07);
+  --color-cta-text: #f0ece3;
+
+  --font-serif: 'Cormorant Garant', Georgia, serif;
+  --font-sans: 'Montserrat', 'Helvetica Neue', sans-serif;
+
+  --header-height: 56px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
