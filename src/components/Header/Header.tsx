@@ -43,7 +43,7 @@ export function Header() {
 
       <div className={styles.center}>
         <a href="/" className={styles.logo} aria-label="МОНАВИ Президенция — на главную">
-          <img src="/logo.png" alt="МОНАВИ Президенция" className={styles.logoImg} draggable={false} />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="МОНАВИ Президенция" className={styles.logoImg} draggable={false} />
         </a>
       </div>
 

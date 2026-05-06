@@ -6,6 +6,8 @@ import styles from './ConceptSection.module.scss'
 const D_W = 1920
 const D_H = 940
 
+const BASE = import.meta.env.BASE_URL
+
 interface PhotoDesign {
   id: number
   src: string
@@ -26,7 +28,7 @@ interface PhotoDesign {
 const PHOTOS: PhotoDesign[] = [
   {
     id: 1,
-    src: '/4.jpg',
+    src: `${BASE}4.jpg`,
     alt: 'Aerial view of complex',
     left: 0,
     top: 0,
@@ -40,7 +42,7 @@ const PHOTOS: PhotoDesign[] = [
   },
   {
     id: 2,
-    src: '/3.jpg',
+    src: `${BASE}3.jpg`,
     alt: 'Resort and beach area',
     left: 1650,
     top: 0,
@@ -54,7 +56,7 @@ const PHOTOS: PhotoDesign[] = [
   },
   {
     id: 3,
-    src: '/2.jpg',
+    src: `${BASE}2.jpg`,
     alt: 'Residential complex aerial',
     left: 200,
     top: 725, // D_H - height = 940 - 215 → bottom edge flush with section
@@ -68,7 +70,7 @@ const PHOTOS: PhotoDesign[] = [
   },
   {
     id: 4,
-    src: '/1.jpg',
+    src: `${BASE}1.jpg`,
     alt: 'Circular garden aerial view',
     left: 1000,
     top: 706, // D_H - height = 940 - 234 → bottom edge flush with section
@@ -117,8 +119,15 @@ export function ConceptSection() {
       className={styles.section}
       aria-label="Концепция проекта"
     >
+      {/* Background pattern — uses BASE_URL so it works on GitHub Pages */}
+      <div
+        className={styles.bgPattern}
+        style={{ backgroundImage: `url(${BASE}background-element.svg)` }}
+        aria-hidden="true"
+      />
+
       {/* Background watermark */}
-      <img src="/presidency.png" alt="" aria-hidden="true" className={styles.watermark} draggable={false} />
+      <img src={`${BASE}presidency.png`} alt="" aria-hidden="true" className={styles.watermark} draggable={false} />
 
       {/* Section label */}
       <p className={styles.label}>
@@ -193,7 +202,7 @@ export function ConceptSection() {
       })}
 
       {/* Decorative monogram */}
-      <img src="/m.png" alt="" aria-hidden="true" className={styles.monogram} draggable={false} />
+      <img src={`${BASE}m.png`} alt="" aria-hidden="true" className={styles.monogram} draggable={false} />
 
       {/* Scroll cue */}
       <div className={styles.scrollCue}>

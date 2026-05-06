@@ -4,19 +4,17 @@
   height: 100vh;
   overflow: hidden;
   user-select: none;
+}
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url('/background-element.svg');
-    background-repeat: repeat;
-    background-size: 75vw auto;
-    opacity: 0.3;
-    mix-blend-mode: overlay;
-    pointer-events: none;
-    z-index: 0;
-  }
+.bgPattern {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  background-size: 75vw auto;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
 }
 
 // Giant watermark spanning full width
